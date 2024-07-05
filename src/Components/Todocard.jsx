@@ -14,7 +14,7 @@ const Todocard = ({
     <div className="col">
       <div className="todo card m-2 h-100">
         {todo.editing ? (
-          <input name="taskname" required ref={nameRef} />
+          <input name="taskname" ref={nameRef} required/>
         ) : (
           <h3 className="card-title text-center">{todo.name}</h3>
         )}

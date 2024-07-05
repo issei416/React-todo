@@ -73,6 +73,10 @@ function App() {
   };
 
   const handleSave = (id, taskname, taskdesc) => {
+    if (taskname === "" || taskdesc === "") {
+      alert("Please fill all the fields");
+      return
+    }
     setTodolist((prev) =>
       prev.map((todo) =>
         todo.id === id
@@ -90,7 +94,7 @@ function App() {
 
   return (
     <>
-      <div className="display-2 text-success bg-dark text-center d-flex align-items-stretch justify-content-center pb-2">
+      <div className="display-2 text-white bg-dark text-center d-flex align-items-stretch justify-content-center pb-2">
         MY - TODO
       </div>
       <form

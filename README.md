@@ -23,4 +23,6 @@ This project is built using react for Managing todo's and allowing users to have
     * Edit / Save button
     * Delete button
 * Here I have maintained 2 states for the todo list, One for the original todo list where the edit, delete operations happen, and other for the rendering which is created using the original todolist for filtering purpose
-* 
+* The todo card has an edit and delete option which allows user to update and delete todo's from their page
+
+Feel free to visit the site [here](https://react-todo-dev-it.netlify.app)

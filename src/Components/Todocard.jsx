@@ -1,6 +1,12 @@
 import React, { useRef } from "react";
 
-const Todocard = ({ todo, handleSelect, handleDelete, handleEdit,handleSave }) => {
+const Todocard = ({
+  todo,
+  handleSelect,
+  handleDelete,
+  handleEdit,
+  handleSave,
+}) => {
   const nameRef = useRef();
   const descRef = useRef();
 
@@ -8,7 +14,7 @@ const Todocard = ({ todo, handleSelect, handleDelete, handleEdit,handleSave }) =
     <div className="col">
       <div className="todo card m-2 h-100">
         {todo.editing ? (
-                  <input name="taskname" required ref={nameRef} />
+          <input name="taskname" required ref={nameRef} />
         ) : (
           <h3 className="card-title text-center">{todo.name}</h3>
         )}
@@ -16,7 +22,7 @@ const Todocard = ({ todo, handleSelect, handleDelete, handleEdit,handleSave }) =
           <p>
             Description :{" "}
             {todo.editing ? (
-                          <input name="taskdesc" required ref={ descRef} />
+              <input name="taskdesc" required ref={descRef} />
             ) : (
               <i>{todo.description}</i>
             )}
@@ -34,7 +40,7 @@ const Todocard = ({ todo, handleSelect, handleDelete, handleEdit,handleSave }) =
                 }}
                 className={
                   todo.status
-                    ? "bg-success text-white p-1 px-3 text-center"
+                    ? "bg-success text-white py-1 px-3 text-center"
                     : "bg-danger text-white py-1 px-3 text-center"
                 }
               >
@@ -61,16 +67,16 @@ const Todocard = ({ todo, handleSelect, handleDelete, handleEdit,handleSave }) =
                   if (!todo.editing) {
                     handleEdit(todo.id);
                   } else {
-                    handleSave(todo.id,nameRef.current.value,descRef.current.value);
+                    handleSave(
+                      todo.id,
+                      nameRef.current.value,
+                      descRef.current.value
+                    );
                   }
                 }}
               >
                 <img
-                  src={
-                    todo.editing
-                      ? "./assets/save.png"
-                      : "./assets/edit.png"
-                  }
+                  src={todo.editing ? "./assets/save.png" : "./assets/edit.png"}
                   alt="edit"
                   className="img-fluid h-100"
                 />

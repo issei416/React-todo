@@ -8,23 +8,30 @@ function App() {
       id: 1,
       name: "React Todo",
       description: "Build a dynamic todo manager using React",
-      status: false,
+      status: true,
       editing: false,
     },
     {
       id: 2,
-      name: "Todo 2",
-      description: "Todo 2 Description",
+      name: "Components",
+      description: "Add components like todo cards for the project",
       status: true,
       editing: false,
     },
     {
       id: 3,
-      name: "Todo 2",
-      description: "Todo 2 Description",
-      status: false,
+      name: "Hooks & States",
+      description: "use States and Hooks to maintain the data",
+      status: true,
       editing: false,
     },
+    {
+      id: 4,
+      name: "API",
+      description: "use an API to store todo data and track changes",
+      status: false,
+      editing: false,
+    }
   ];
   const [todolist, setTodolist] = useState(initialTodo);
   const [filter, setFilter] = useState("All");
@@ -83,9 +90,9 @@ function App() {
 
   return (
     <>
-      <h1 className="display-2 text-center bg-dark text-white d-flex align-items-center justify-content-center p-3">
-        REACT - TODO
-      </h1>
+      <div className="display-2 text-success bg-dark text-center d-flex align-items-stretch justify-content-center pb-2">
+        MY - TODO
+      </div>
       <form
         className="d-flex flex-column flex-md-row justify-content-center align-items-center m-5"
         onSubmit={(e) => {
@@ -110,12 +117,14 @@ function App() {
           placeholder="Todo Name"
           className="me-md-5 rounded p-2 col w-100 my-2"
           name="taskname"
+          required
         />
         <input
           type="text"
           placeholder="Todo Description"
           className="me-md-5 rounded p-2 col w-100 my-2"
           name="taskdesc"
+          required
         />
         <button
           type="submit"
@@ -140,7 +149,7 @@ function App() {
           </select>
         </div>
         <div className="container w-100 mb-5">
-          <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3">
+          <div className="row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-3">
             {filteredTodolist.map((todo) => (
               <Todocard
                 todo={todo}

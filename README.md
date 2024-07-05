@@ -1,8 +1,26 @@
-# React + Vite
+# React TODO
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project is built using react for Managing todo's and allowing users to have more flexibilty
 
-Currently, two official plugins are available:
+### Techs used :
+* HTML/CSS
+* Bootstrap
+* jsx
+* React
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### Features :
+* Add new todo
+* Edit existing todo
+* Delete todo
+* Filter based on status
+
+### Doc :
+* Apart from App.jsx and Main.jsx this project has another component "Todocard.jsx" where each card is rendered individually
+* Each todo task has a
+    * task name
+    * task description
+    * Status (Done / Not Done)
+    * Edit / Save button
+    * Delete button
+* Here I have maintained 2 states for the todo list, One for the original todo list where the edit, delete operations happen, and other for the rendering which is created using the original todolist for filtering purpose
+* 
